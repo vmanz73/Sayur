@@ -12,7 +12,7 @@ def sql_fetch(con):
  
     for row in rows:
         
-        print(row[2])
+        print(row)
         
  
 sql_fetch(con)
