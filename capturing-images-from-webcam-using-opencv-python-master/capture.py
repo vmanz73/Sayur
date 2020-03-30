@@ -21,14 +21,16 @@ while True:
     try:
         check, frame = webcam.read()
         print(check) #prints true as long as the webcam is running
-        print(frame) #prints matrix values of each framecd 
+        print(frame) #prints matrix values of each framecd
+        cv2.putText(frame, str(n), (10, 25),  cv2.FONT_HERSHEY_SIMPLEX,
+        0.7, (0, 255, 0), 2)
         cv2.imshow("Capturing", frame)
         key = cv2.waitKey(1)
         if key == ord('s'): 
             
             cv2.imwrite(filename=name+"/"+name + "-"+ str(n)+".jpg", img=frame)
-            #cv2.imwrite(name+'.jpg', img=frame)
             n += 1
+            
             
         elif key == ord('q'):
             print("Turning off camera.")
