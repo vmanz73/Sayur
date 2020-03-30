@@ -2,10 +2,6 @@ import tkinter as tk
 from tkinter import simpledialog
 import os
 
-
-
-n = 0
-name = ""
 def set_class():
     ROOT = tk.Tk()
     ROOT.withdraw()
