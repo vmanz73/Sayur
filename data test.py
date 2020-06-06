@@ -54,7 +54,7 @@ while True:
     # classify the input image
     #(Chilo, Coccinella, Leptocorisa) = model.predict(image)[0]
     (bug) = model.predict(image)[0].copy()
-    name = ["cabbage","carrot","cucumber","potato","tomato"]
+    name = ["kentang","kubis","mentimun","terung","tomat","wortel"]
     #name = ["Chilo suppressalis","Coccinella septempunctata","Leptocorisa acuta","Mantis sp","Nephotettix virescens","Nilaparvata lugens"]
     # build the label
     sort(bug,name)

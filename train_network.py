@@ -57,16 +57,18 @@ for imagePath in imagePaths:
 	# extract the class label from the image path and update the
 	# labels list
 	label = imagePath.split(os.path.sep)[-2]
-	if label == "cabbage":	
+	if label == "kentang":	
 		label = 0
-	elif label == "carrot":
+	elif label == "kubis":
 		label = 1
-	elif label == "cucumber":
+	elif label == "mentimun":
 		label = 2
-	elif label == "potato":
+	elif label == "terung":
 		label = 3
-	else:
+	elif label == "tomat":
 		label = 4
+	else:
+		label = 5
 	
 
 	labels.append(label)
@@ -81,8 +83,8 @@ labels = np.array(labels)
 	labels, test_size=0.25, random_state=42)
 
 # convert the labels from integers to vectors
-trainY = to_categorical(trainY, num_classes=5)
-testY = to_categorical(testY, num_classes=5)
+trainY = to_categorical(trainY, num_classes=6)
+testY = to_categorical(testY, num_classes=6)
 
 # construct the image generator for data augmentation
 aug = ImageDataGenerator(rotation_range=30, width_shift_range=0.1,
@@ -91,7 +93,7 @@ aug = ImageDataGenerator(rotation_range=30, width_shift_range=0.1,
 
 # initialize the model
 print("[INFO] compiling model...")
-model = LeNet.build(width=28, height=28, depth=3, classes=5)
+model = LeNet.build(width=28, height=28, depth=3, classes=6)
 opt = Adam(lr=INIT_LR, decay=INIT_LR / EPOCHS)
 model.compile(loss="binary_crossentropy", optimizer=opt,
 	metrics=["accuracy"])
@@ -112,9 +114,9 @@ plt.figure()
 N = EPOCHS
 plt.plot(np.arange(0, N), H.history["loss"], label="train_loss")
 plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
-plt.plot(np.arange(0, N), H.history["acc"], label="train_acc")
-plt.plot(np.arange(0, N), H.history["val_acc"], label="val_acc")
-plt.title("Training Loss and Accuracy on Santa/Not Santa")
+plt.plot(np.arange(0, N), H.history["accuracy"], label="train_acc")
+plt.plot(np.arange(0, N), H.history["val_accuracy"], label="val_acc")
+plt.title("Training Loss and Accuracy on Sayur")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss/Accuracy")
 plt.legend(loc="lower left")
