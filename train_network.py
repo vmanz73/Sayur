@@ -11,7 +11,7 @@ from keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 from keras.preprocessing.image import img_to_array
 from keras.utils import to_categorical
-from pyimagesearch.lenet import LeNet
+from train.lenet import LeNet
 from imutils import paths
 import matplotlib.pyplot as plt
 import numpy as np
@@ -53,7 +53,6 @@ for imagePath in imagePaths:
 	image = cv2.resize(image, (28, 28))
 	image = img_to_array(image)
 	data.append(image)
-
 	# extract the class label from the image path and update the
 	# labels list
 	label = imagePath.split(os.path.sep)[-2]
