@@ -1,5 +1,5 @@
 import urllib.request
-def connect(host='http://http://128.1.2.1'):
+def connect(host):
     try:
         urllib.request.urlopen(host) #Python 3.x
         return True
