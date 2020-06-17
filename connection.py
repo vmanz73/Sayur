@@ -6,4 +6,4 @@ def connect(host):
     except:
         return False
 # test
-print( 'connected' if connect() else 'no internet!' )
+#print( 'connected' if connect() else 'no internet!' )

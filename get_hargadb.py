@@ -1,7 +1,7 @@
 import urllib.request, json 
 import pandas as pd
-def updt_harga():
-    with urllib.request.urlopen("http://127.0.0.1/Sayur/db/harga_api.php") as url:
+def updt_harga(host):
+    with urllib.request.urlopen(host + "/Sayur/db/harga_api.php") as url:
         data = json.loads(url.read().decode())
         df = pd.DataFrame(data)
         df.to_csv ('dataHarga.csv', index = False, header=True)

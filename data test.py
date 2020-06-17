@@ -5,11 +5,12 @@ from imutils.video import VideoStream
 from imutils.video import FPS
 import time
 import numpy as np
+import connection
 import get_hargadb as harga
 import imutils
 import cv2
 
-
+host = "http://netflix.com"
 
 # load the image
 print("[INFO] starting video stream...")
@@ -43,6 +44,9 @@ while True:
     #Get price
     price = harga.get_harga(name[probMax])
     
+    #cek koneksi 
+    konek = 'connected' if connection.connect(host) else 'no internet!' 
+    
     # draw the label on the image
     output = imutils.resize(frame, width=400)
     cv2.putText(frame, label, (10, 25),  cv2.FONT_HERSHEY_SIMPLEX,
@@ -50,6 +54,8 @@ while True:
     cv2.putText(frame, "Berat : 6 Kg", (10,50), cv2.FONT_HERSHEY_SIMPLEX, 
         0.7, (0, 255, 0), 2)
     cv2.putText(frame, "Harga : Rp." + str(price), (10,75), cv2.FONT_HERSHEY_SIMPLEX, 
+        0.7, (0, 255, 0), 2)
+    cv2.putText(frame, konek, (10,100), cv2.FONT_HERSHEY_SIMPLEX, 
         0.7, (0, 255, 0), 2)
     fps.update()
 
