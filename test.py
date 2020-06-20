@@ -85,14 +85,14 @@ while True:
         label = name[probMax]
         proba = max(veg)
 
-        label = "{}: {:.2f}%".format(label, proba * 100)
+        label = "{}: {:.2f}%    ".format(label, proba * 100)
 
         #Get price
         price = harga.get_harga(name[probMax])
     
 
-        lcd.lcd_display_string("Berat : "+str(int(val))+" g           ", 1)
-        lcd.lcd_display_string("Jenis Sayur : " + label, 2)
+        lcd.lcd_display_string("Berat : "+str(int(val))+" g    ", 1)
+        lcd.lcd_display_string(label, 2)
         lcd.lcd_display_string("Harga/kg : Rp. " + str(price)+ "      ", 3)
         lcd.lcd_display_string("Total : Rp."+str(int(val)*int(price)/1000) + "    ", 4)
 
