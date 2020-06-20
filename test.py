@@ -58,10 +58,10 @@ while True:
         val = hx.get_weight(5)
         print(val)
 
-        lcd.lcd_display_string("Berat : "+str(val)+" g", 1)
+        lcd.lcd_display_string("Berat : "+str(int(val))+" g", 1)
         lcd.lcd_display_string("Jenis Sayur : Tomat", 2)
         lcd.lcd_display_string("Harga/kg : Rp. " + str(harga), 3)
-        lcd.lcd_display_string("Total : Rp."+str(val*harga), 4)
+        lcd.lcd_display_string("Total : Rp."+str(int(val)*harga), 4)
 
 
         hx.power_down()
