@@ -85,7 +85,7 @@ while True:
         label = name[probMax]
         proba = max(veg)
 
-        label = "        {}: {:.2f}%  ".format(label, proba * 100)
+        label = "      {}: {:.2f}%  ".format(label, proba * 100)
 
         #Get price
         price = harga.get_harga(name[probMax])
