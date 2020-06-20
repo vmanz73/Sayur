@@ -65,7 +65,7 @@ fps = FPS().start()
 
 print("Tare done! Add weight now...")
 
-harga = 6000
+
 while True:
     try:
         frame = vs.read()
