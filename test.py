@@ -33,7 +33,7 @@ def cleanAndExit():
     
     if not EMULATE_HX711:
         GPIO.cleanup()
-    break
+    
     fps.stop()
     print("[INFO] elasped time: {:.2f}".format(fps.elapsed()))
     print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
@@ -105,4 +105,5 @@ while True:
         # show the output image
         cv2.imshow("Frame", frame)
     except (KeyboardInterrupt, SystemExit):
+        break
         cleanAndExit()
