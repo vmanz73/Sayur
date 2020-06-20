@@ -10,7 +10,7 @@ import get_hargadb as harga
 import imutils
 import cv2
 
-host = "http://netflix.com"
+host = "http://127.0.0.1"
 
 # load the image
 print("[INFO] starting video stream...")

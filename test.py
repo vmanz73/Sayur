@@ -94,7 +94,7 @@ while True:
         lcd.lcd_display_string("Berat : "+str(int(val))+" g           ", 1)
         lcd.lcd_display_string("Jenis Sayur : " + label, 2)
         lcd.lcd_display_string("Harga/kg : Rp. " + str(price)+ "      ", 3)
-        lcd.lcd_display_string("Total : Rp."+str(harga*int(harga)/1000) + "    ", 4)
+        lcd.lcd_display_string("Total : Rp."+str(int(val)*int(price)/1000) + "    ", 4)
 
 
         hx.power_down()
