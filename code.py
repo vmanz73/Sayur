@@ -1,17 +1,16 @@
 import lcddriver
-from time import *
 import time
 import sys
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 from imutils.video import VideoStream
 from imutils.video import FPS
-import time
+import imutils
+import cv2
 import numpy as np
 import connection as konek
 import get_hargadb as harga
-import imutils
-import cv2
+
 
  
 lcd = lcddriver.lcd()
